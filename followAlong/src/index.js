@@ -47,20 +47,18 @@ class App extends React.Component {
     }
   }
 
-  handleItemToggle = () => {
-    const newGroceries = this.state.groceries.map(item => {
-      if(itemId === item.id) {
-        return {
-          ...item,
-          purchased: true
+  handleItemToggle = (itemId) => {
+    this.setState({
+      groceries: this.state.groceries.map(item => {
+        if (itemId === item.id) {
+          return {
+            ...item,
+            purchased: !item.purchased
+          };
         }
-      }
-      return item
-    }) 
-    console.log(newGroceries);
-   this.setState({
-     groceries: newGroceries
-   })
+        return item;
+      })
+    });
   }
 
   // Class methods to update state
