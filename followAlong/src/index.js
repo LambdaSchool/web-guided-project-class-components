@@ -48,8 +48,6 @@ class App extends React.Component {
   }
 
   handleItemToggle = () => {
-    
-    const itemId = 123
     const newGroceries = this.state.groceries.map(item => {
       if(itemId === item.id) {
         return {
