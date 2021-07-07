@@ -74,6 +74,16 @@ class App extends React.Component {
     });
   }
 
+  handleClearItems = () => {
+    const newGroceries = this.state.groceries.filter(item => {
+      return !item.purchased
+    })
+
+    this.setState({
+      groceries: newGroceries
+    })
+  }
+
   // Class methods to update state
   render() {
     return (
