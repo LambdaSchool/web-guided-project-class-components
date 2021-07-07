@@ -43,8 +43,17 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      groceries:groceries
+      groceries: groceries
     }
+  }
+
+  handleItemToggle = () => {
+    const newGroceries = this.state.groceries
+    newGroceries[0].purchased = true
+
+    this.setState({
+      groceries: newGroceries
+    })
   }
 
   // Class methods to update state
