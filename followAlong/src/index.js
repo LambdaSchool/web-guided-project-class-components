@@ -60,9 +60,9 @@ class App extends React.Component {
       return item
     }) 
     console.log(newGroceries);
-    this.setState({
-      groceries: newGroceries
-    })
+   this.setState({
+     groceries: newGroceries
+   })
   }
 
   // Class methods to update state
