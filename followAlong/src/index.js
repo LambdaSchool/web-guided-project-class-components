@@ -61,6 +61,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
+          <button onClick={this.handleItemToggle}>Change bananas</button>
            <h1>Shopping List</h1>
            <ListForm />
          </div>
