@@ -47,6 +47,19 @@ class App extends React.Component {
     }
   }
 
+  handleAddItem = (name) => {
+    const item = {
+      name: name,
+      id: this.state.groceries.length,
+      purchased: false
+    }
+
+    const newGroceries = [...this.state.groceries, item]
+    this.setState({
+      groceries: newGroceries
+    })
+  }
+
   handleItemToggle = (itemId) => {
     this.setState({
       groceries: this.state.groceries.map(item => {
@@ -69,7 +82,7 @@ class App extends React.Component {
            <h1>Shopping List</h1>
            <ListForm />
          </div>
-        <GroceryList handleItemToggle={this.handleItemToggle} groceries={groceries} />
+        <GroceryList handleItemToggle={this.handleItemToggle} groceries={this.state.groceries} />
        </div>
     );
   }
